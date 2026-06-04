@@ -23,6 +23,9 @@ knitr::knit_hooks$set(output = function(x, options) {
 set.seed(42)
 
 ## ----eval = FALSE-------------------------------------------------------------
+# install.packages("picreg")
+
+## ----eval = FALSE-------------------------------------------------------------
 # # install.packages("remotes")
 # remotes::install_github("VcMaxouuu/picreg")
 
@@ -38,14 +41,14 @@ y <- QuickStartExample$y
 fit <- pic(X, y)
 
 ## ----print-fit----------------------------------------------------------------
-print(fit)
+summary(fit)
 
 ## ----fit-fields---------------------------------------------------------------
 # Number of selected features and their identifiers
 fit$df
 fit$selected
 
-# Selected regularisation parameter
+# Selected regularization parameter
 fit$lambda
 
 # Family and penalty descriptors
@@ -54,7 +57,7 @@ fit$penalty
 
 ## ----coef, out.lines = 12-----------------------------------------------------
 coef(fit)                          # original scale
-# coef(fit, standardized = TRUE)   # standardised scale; same as fit$beta
+# coef(fit, standardized = TRUE)   # standardized scale; same as fit$beta
 
 ## ----predict, out.lines = 6---------------------------------------------------
 predict(fit, newx = X[1:5,])                  # response
@@ -80,12 +83,15 @@ data.frame(
   lambda  = c(fit_lasso$lambda, fit_scad$lambda, fit_mcp$lambda)
 )
 
-## ----binomial-ex--------------------------------------------------------------
+## -----------------------------------------------------------------------------
 data(BinomialExample)
 X <- BinomialExample$X
 y <- BinomialExample$y
-
 fit_binom <- pic(X, y, family = 'binomial')
+print(fit_binom)
+
+## ----binomial-ex--------------------------------------------------------------
+predict(fit_binom, newx = X[1:5, ], type = 'response')
 predict(fit_binom, newx = X[1:5, ], type = 'class')
 
 ## ----cox-example--------------------------------------------------------------
