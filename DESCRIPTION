@@ -1,8 +1,8 @@
 Package: picreg
 Type: Package
 Title: Variable Selection using the Pivotal Information Criterion
-Version: 0.1.3
-Date: 2026-06-03
+Version: 0.1.4
+Date: 2026-07-20
 Authors@R: c(
     person("Maxime", "van Cutsem",
            role  = c("aut", "cre"),
@@ -41,9 +41,9 @@ RoxygenNote: 8.0.0
 Config/roxygen2/version: 8.0.0
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2026-06-04 12:43:05 UTC; maxvancutsem
+Packaged: 2026-07-20 11:13:41 UTC; maxvancutsem
 Author: Maxime van Cutsem [aut, cre],
   Sylvain Sardy [aut]
 Maintainer: Maxime van Cutsem <maxime.vancutsem@unige.ch>
 Repository: CRAN
-Date/Publication: 2026-06-04 14:50:08 UTC
+Date/Publication: 2026-07-20 12:20:17 UTC

@@ -107,7 +107,7 @@ print(fit_cox)
 plot_baseline(fit_cox)
 
 ## ----cox-survival, fig.height = 3.2-------------------------------------------
-sf <- predict_survival_function(fit_cox, newx = X_cox[1:3, ])
+sf <- predict(fit_cox, newx = X_cox[1:3, ], type = "survival")
 plot_survival_curves(sf)
 
 ## ----cox-feature-effect, fig.height = 3.5-------------------------------------
@@ -315,7 +315,7 @@ knitr::include_graphics("phase_transition_comparaison.png")
 
 ## ----echo = FALSE-------------------------------------------------------------
 structure(c(1.238, 0.104, 1.404, 0, 0), class = "proc_time",
-          .Names = c("user.self", "sys.self", "elapsed",
+          names = c("user.self", "sys.self", "elapsed",
                      "user.child", "sys.child"))
 
 ## ----eval = FALSE-------------------------------------------------------------
@@ -323,7 +323,7 @@ structure(c(1.238, 0.104, 1.404, 0, 0), class = "proc_time",
 
 ## ----echo = FALSE-------------------------------------------------------------
 structure(c(0.188, 0.023, 0.212, 0, 0), class = "proc_time",
-          .Names = c("user.self", "sys.self", "elapsed",
+          names = c("user.self", "sys.self", "elapsed",
                      "user.child", "sys.child"))
 
 ## ----eval = FALSE-------------------------------------------------------------
@@ -331,7 +331,7 @@ structure(c(0.188, 0.023, 0.212, 0, 0), class = "proc_time",
 
 ## ----echo = FALSE-------------------------------------------------------------
 structure(c(0.998, 0.052, 1.054, 0, 0), class = "proc_time",
-          .Names = c("user.self", "sys.self", "elapsed",
+          names = c("user.self", "sys.self", "elapsed",
                      "user.child", "sys.child"))
 
 ## ----eval = FALSE-------------------------------------------------------------
@@ -343,7 +343,7 @@ structure(c(0.998, 0.052, 1.054, 0, 0), class = "proc_time",
 
 ## ----echo = FALSE-------------------------------------------------------------
 structure(c(1.805, 0.115, 1.941, 0, 0), class = "proc_time",
-          .Names = c("user.self", "sys.self", "elapsed",
+          names = c("user.self", "sys.self", "elapsed",
                      "user.child", "sys.child"))
 
 ## ----eval = FALSE-------------------------------------------------------------
@@ -351,7 +351,7 @@ structure(c(1.805, 0.115, 1.941, 0, 0), class = "proc_time",
 
 ## ----echo = FALSE-------------------------------------------------------------
 structure(c(0.189, 0.023, 0.213, 0, 0), class = "proc_time",
-          .Names = c("user.self", "sys.self", "elapsed",
+          names = c("user.self", "sys.self", "elapsed",
                      "user.child", "sys.child"))
 
 ## ----eval = FALSE-------------------------------------------------------------
@@ -359,6 +359,6 @@ structure(c(0.189, 0.023, 0.213, 0, 0), class = "proc_time",
 
 ## ----echo = FALSE-------------------------------------------------------------
 structure(c(3.191, 0.084, 3.377, 0, 0), class = "proc_time",
-          .Names = c("user.self", "sys.self", "elapsed",
+          names = c("user.self", "sys.self", "elapsed",
                      "user.child", "sys.child"))
 
