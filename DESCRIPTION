@@ -1,8 +1,8 @@
 Package: picreg
 Type: Package
 Title: Variable Selection using the Pivotal Information Criterion
-Version: 0.1.4
-Date: 2026-07-20
+Version: 0.2.0
+Date: 2026-10-20
 Authors@R: c(
     person("Maxime", "van Cutsem",
            role  = c("aut", "cre"),
@@ -31,19 +31,19 @@ BugReports: https://github.com/VcMaxouuu/picreg/issues
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.6.0)
-Imports: stats, graphics, grDevices, parallel, future, future.apply,
-        Matrix, Rcpp (>= 1.0.10)
+Imports: stats, graphics, grDevices, Matrix, Rcpp (>= 1.0.10)
 LinkingTo: Rcpp, RcppArmadillo
-Suggests: testthat (>= 3.0.0), knitr, rmarkdown, xfun, glmnet
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, xfun, glmnet, future,
+        future.apply
 VignetteBuilder: knitr
 SystemRequirements: C++17
 RoxygenNote: 8.0.0
 Config/roxygen2/version: 8.0.0
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2026-07-20 11:13:41 UTC; maxvancutsem
+Packaged: 2026-10-20 11:45:08 UTC; maxvancutsem
 Author: Maxime van Cutsem [aut, cre],
   Sylvain Sardy [aut]
 Maintainer: Maxime van Cutsem <maxime.vancutsem@unige.ch>
 Repository: CRAN
-Date/Publication: 2026-07-20 12:20:17 UTC
+Date/Publication: 2026-10-20 12:20:02 UTC

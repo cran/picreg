@@ -73,9 +73,9 @@ plot(fit$lambda_pdb)
 pdb_summary(fit)
 
 ## ----manual-lambda------------------------------------------------------------
-fit_lasso <- pic(X, y, penalty = "lasso", lambda = fit$lambda)
-fit_scad  <- pic(X, y, penalty = "scad",  lambda = fit$lambda)
-fit_mcp   <- pic(X, y, penalty = "mcp",   lambda = fit$lambda)
+fit_lasso <- pic(X, y, penalty = "lasso", lambda = fit$lambda_pdb)
+fit_scad  <- pic(X, y, penalty = "scad",  lambda = fit$lambda_pdb)
+fit_mcp   <- pic(X, y, penalty = "mcp",   lambda = fit$lambda_pdb)
 
 data.frame(
   penalty = c("lasso", "scad", "mcp"),
@@ -133,9 +133,9 @@ data(CoxExample)
 fit_cox <- pic(CoxExample$X, CoxExample$y, family = "cox")
 assess(fit_cox, newx = CoxExample$X, newy = CoxExample$y)
 
-## ----assess-relax-------------------------------------------------------------
-fit_relax <- pic(X, y, relax = TRUE)
-assess(fit_relax, newx = X, newy = y)
+## ----refit--------------------------------------------------------------------
+refit <- lm(y ~ X[, fit$selected, drop = FALSE])
+mean(residuals(refit)^2)
 
 ## ----assess-with-truth--------------------------------------------------------
 true_active <- paste0("gene_", 1:5)
@@ -224,7 +224,7 @@ rbind(
 #     X <- matrix(rnorm(n * p), n, p)
 #     b <- numeric(p)
 #     true_idx <- if (s > 0L) sample.int(p, s) else integer(0)
-#     if (s > 0L) b[true_idx] <- 3
+#     if (s > 0L) b[true_idx] <- 3 * sample(c(-1, 1), s, replace = TRUE)
 # 
 #     y <- as.numeric(X %*% b + rnorm(n))
 # 
